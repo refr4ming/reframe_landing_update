@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Stats } from "@/components/stats"
 import { HealthImpacts, Impacts } from "@/components/impacts"
+import { Chat } from "@/components/chat"
 import { Quote, Footer } from "@/components/quote-footer"
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
           <Stats />
           <HealthImpacts />
           <Impacts />
+          <Chat />
           <Quote />
         </main>
         <Footer />
