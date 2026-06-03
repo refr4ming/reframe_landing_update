@@ -146,6 +146,23 @@ export function Hero() {
         Explore your natural rhythm.
       </p>
 
+      {/* Try Beta button */}
+      <div style={{ animation: "fadeUp 0.9s ease both 0.46s" }} className="mb-10">
+        <a
+          href="https://chat.justreframe.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-medium uppercase tracking-widest px-8 py-3.5 rounded-full transition-all duration-200 hover:opacity-90"
+          style={{
+            letterSpacing: "0.12em",
+            color: "rgba(20,30,25,0.95)",
+            background: "rgba(255,210,120,0.88)",
+          }}
+        >
+          Try Beta
+        </a>
+      </div>
+
       {/* Waitlist form */}
       <div
         className="flex flex-col items-center gap-3 w-full max-w-sm"
@@ -185,7 +202,7 @@ export function Hero() {
                   borderLeft: "0.5px solid rgba(255,255,255,0.11)",
                 }}
               >
-                {status === "loading" ? "Sending..." : "Join waitlist"}
+                {status === "loading" ? "Sending..." : "Join email list"}
               </button>
             </div>
             {status === "error" && (

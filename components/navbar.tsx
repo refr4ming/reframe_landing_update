@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 
 export function Navbar() {
   return (
@@ -25,19 +24,6 @@ export function Navbar() {
           reframe
         </span>
       </div>
-      <Link
-        href="#waitlist"
-        className="text-xs font-medium uppercase tracking-widest transition-all duration-200 rounded-full px-5 py-2 hover:bg-white/10"
-        style={{
-          letterSpacing: "0.12em",
-          color: "rgba(255,255,255,0.7)",
-          background: "rgba(255,255,255,0.05)",
-          border: "0.5px solid rgba(255,255,255,0.12)",
-        }}
-        
-      >
-        Join the waitlist
-      </Link>
     </nav>
   )
 }
