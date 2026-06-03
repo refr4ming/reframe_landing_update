@@ -194,9 +194,8 @@ export function Hero() {
               <button
                 onClick={handleJoin}
                 disabled={status === "loading"}
-                className="text-xs font-medium uppercase tracking-widest px-6 py-3.5 transition-all duration-200 whitespace-nowrap disabled:opacity-60 hover:bg-white/15"
+                className="text-xs font-medium uppercase tracking-wide px-6 py-3.5 transition-all duration-200 whitespace-nowrap disabled:opacity-60 hover:bg-white/15"
                 style={{
-                  letterSpacing: "0.1em",
                   color: "rgba(255,255,255,0.82)",
                   background: "rgba(255,255,255,0.09)",
                   borderLeft: "0.5px solid rgba(255,255,255,0.11)",
