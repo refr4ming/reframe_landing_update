@@ -1,5 +1,5 @@
 import Image from "next/image"
-
+import { MenuIcon } from "lucide-react"
 export function Navbar() {
   return (
     <nav
@@ -9,6 +9,7 @@ export function Navbar() {
         borderColor: "rgba(255,255,255,0.08)",
       }}
     >
+      
       <div className="flex items-center gap-2.5">
         <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lotus2-vDT8o0NwOPMDg9z41RBs5SmdguxRVI.png"
@@ -24,6 +25,7 @@ export function Navbar() {
           reframe
         </span>
       </div>
+      <button>Log In</button>
     </nav>
   )
 }
