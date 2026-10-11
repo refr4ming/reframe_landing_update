@@ -1,5 +1,5 @@
+import Link from "next/link"
 import Image from "next/image"
-import { MenuIcon } from "lucide-react"
 export function Navbar() {
   return (
     <nav
@@ -25,7 +25,10 @@ export function Navbar() {
           reframe
         </span>
       </div>
-      <button>Log In</button>
+      <Link href="/login"
+      className="font-serif font-light tracking-widest"
+      style={{ fontSize: "1.3rem", color: "rgba(255,255,255,0.9)" }}> Log In
+      </Link>
     </nav>
   )
 }

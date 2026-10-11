@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <div
       className="font-sans overflow-x-hidden"
-      style={{ background: "#060c0a", color: "rgba(255,255,255,0.9)", lineHeight: 1.7 }}
     >
       <RippleCanvas />
       <div className="relative" style={{ zIndex: 1 }}>
