@@ -16,7 +16,7 @@ export default function Login() {
     if (!email || !isValidEmail(email) || !password || !isValidPassword(password)) {
       setStatus("error")
       setErrorMsgEmail("Please enter a valid email address.")
-      setErrorMsgPassword("Please enter a valid email password.")
+      setErrorMsgPassword("Please enter a valid password.")
       setTimeout(() => setStatus("idle"), 2500)
       return
     }
@@ -30,28 +30,84 @@ export default function Login() {
     return val.length >= 8
   }
   return (
-    <div>
-        
-      <h1>Watagatapitusberry</h1>
-      <form onSubmit={handleSubmit}>
+      <section
+      className="min-h-screen flex flex-col items-center justify-center text-center px-8 pt-24 pb-16"
+    >
+            <h1
+      className="font-serif font-light leading-tight mb-3 text-balance"
+      style={{
+        fontSize: "clamp(1.75rem, 3.2vw, 2.4rem)",
+        color: "rgba(255,255,255,0.86)",
+      }}
+    >
+        Return to Stillness</h1>
+
+      <p className="text-xs font-medium uppercase tracking-widest mb-2.5"
+          style={{ letterSpacing: "0.22em", color: "rgba(140,200,170,0.5)" }}>
+        Clear Mind. Clear Body. Clear Soul. 
+      </p>
+      <p
+    className="text-xs font-medium uppercase tracking-widest mb-2.5"
+          style={{ letterSpacing: "0.22em", color: "rgba(140,200,170,0.5)" }}
+        >
+
+        Enter your email and password to login</p>
+      <form onSubmit={handleSubmit}
+      className="flex flex-col items-center gap-3 w-full max-w-sm"
+      >
         <input type="email" placeholder="Email" value={email} 
-          onChange={(e) => setEmail(e.target.value)}/>
+          onChange={(e) => setEmail(e.target.value)}
+          autoComplete="email"
+          aria-label="Email address"
+          className="w-full rounded-full px-6 py-3.5 text-sm font-sans outline-none"
+          style={{
+            background: "rgba(255,255,255,0.05)",
+            border: "0.5px solid rgba(255,255,255,0.14)",
+            color: "rgba(255,255,255,0.85)",
+          }}
+          />
                       {status === "error" && (
               <p className="text-xs" style={{ color: "rgba(255,160,100,0.75)" }}>
                 {errorMsgEmail}
               </p>
             )}
         <input type="password" placeholder="Password" value={password} 
-         onChange={(e) => setPassword(e.target.value)} />
+         onChange={(e) => setPassword(e.target.value)} 
+         autoComplete="current-password"
+         aria-label="Password"
+         className="w-full rounded-full px-6 py-3.5 text-sm font-sans outline-none"
+         style={{
+           background: "rgba(255,255,255,0.05)",
+           border: "0.5px solid rgba(255,255,255,0.14)",
+           color: "rgba(255,255,255,0.85)",
+         }}
+         />
          {status === "error" && (
               <p className="text-xs" style={{ color: "rgba(255,160,100,0.75)" }}>
                 {errorMsgPassword}
               </p>
             )}
-        <button type="submit">Enter</button>
+        <button 
+        type="submit"
+        disabled={status === "loading"}
+        className="w-full rounded-full px-6 py-3.5 text-xs font-medium uppercase tracking-widest transition-all duration-200 disabled:opacity-60 hover:bg-white/15 outline-none"
+        style={{
+          letterSpacing: "0.1em",
+          color: "rgba(255,255,255,0.9)",
+          background: "rgba(255,255,255,0.12)",
+          border: "0.5px solid rgba(255,210,120,0.2)",
+        }}
+        >
+          {status === "loading" ? "Entering..." : "Enter"}
+        </button>
 
-        <Link href="/signup">Sign Up</Link>
+        <Link href="/signup"
+        className="text-xs mt-2 hover:underline transition-colors"
+        style={{
+          color: "rgba(255,255,255,0.4)",
+        }}
+        >New Here? Sign Up</Link>
       </form>
-    </div>
+    </section>
   )
 }

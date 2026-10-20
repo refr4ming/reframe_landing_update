@@ -46,7 +46,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cormorant.variable} ${dmSans.variable} font-sans antialiased`}>
+      <body className={`${cormorant.variable} ${dmSans.variable} font-sans antialiased`}
+      style={{ background: "#060c0a", color: "rgba(255,255,255,0.9)", lineHeight: 1.7 }}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
