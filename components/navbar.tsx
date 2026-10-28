@@ -1,6 +1,8 @@
+import { auth } from "@/auth"
 import Link from "next/link"
 import Image from "next/image"
-export function Navbar() {
+export async function Navbar() { 
+  const session = await auth()
   return (
     <nav
       className="flex items-center justify-between px-10 py-5 sticky top-0 z-50 backdrop-blur-xl border-b"

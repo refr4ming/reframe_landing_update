@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { signIn } from "next-auth/react"
 
 
 export default function Login() {
@@ -87,8 +88,8 @@ export default function Login() {
                 {errorMsgPassword}
               </p>
             )}
-        <button 
-        type="submit"
+        <button
+        type="button"
         disabled={status === "loading"}
         className="w-full rounded-full px-6 py-3.5 text-xs font-medium uppercase tracking-widest transition-all duration-200 disabled:opacity-60 hover:bg-white/15 outline-none"
         style={{
@@ -100,7 +101,9 @@ export default function Login() {
         >
           {status === "loading" ? "Entering..." : "Enter"}
         </button>
-
+        
+        <button type="button"
+        onClick={(options) => signIn("google", {redirectTo: "/" })}>Continue with Google</button>
         <Link href="/signup"
         className="text-xs mt-2 hover:underline transition-colors"
         style={{
