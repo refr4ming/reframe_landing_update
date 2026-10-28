@@ -32,11 +32,12 @@ export function RippleCanvas() {
     }
 
     function addRipple() {
+      if (ripples.length > 20) return
       ripples.push({
         x: Math.random() * W,
         y: Math.random() * H,
         r: 0,
-        max: Math.random() * 200 + 100,
+        max: Math.random() * 200 + 100, 
         a: 0.14,
         spd: Math.random() * 0.65 + 0.3,
       })
